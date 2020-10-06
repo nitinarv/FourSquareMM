@@ -70,7 +70,7 @@ class DetailFragment : BaseFragment(){
                     resource.data?.let { response ->
                         venu_name.text = response.venueName
                         description.text = response.description
-                        response.ratings?.let { ratingbar.rating = it.toFloat() }
+                         ratingbar.rating = (response.ratings?:0).toFloat()
                         short_url.text = response.shortUrl
 
                         val photoPath = response.run {
